@@ -16,4 +16,4 @@ Este proyecto consiste en un reproductor web optimizado para Xtream Codes, con s
 3. Utiliza los botones flotantes personalizables para realizar acciones como adelantar, retroceder y pausar/play el video.
 
 
-## 🔗 [Accede a la preview del proyecto JWPlayerPro desde aqui](https://maxgo.pro)
+## 🔗 [Accede a la preview del proyecto JWPlayerPro desde aqui](https://jeremias0618.github.io/JWPlayerPro/)
