@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>JWPlayerPro</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- Vinculamos el CSS -->
+  <script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
+  <script src="js/jwplayer.js" defer></script> <!-- JavaScript principal -->
+  <script src="js/video-controls.js" defer></script> <!-- Controles del video -->
+</head>
+<body>
+
+  <h1>JWPlayerPro</h1>
+
+  <input type="text" id="url-input" placeholder="Ingresa la URL del video">
+  <button id="load-btn" onclick="loadVideo()">Cargar Video</button>
+
+  <div id="miPlayer"></div>
+
+  <div id="jw-buttons" class="jw-overlay-buttons">
+    <button id="adelantar-btn" class="control-btn" onclick="adelantar10(event)">
+      <img src="img/left_button.png" alt="Adelantar 10s">
+    </button>
+
+    <button id="pausar-btn" class="control-btn" onclick="togglePlayPause(event)">
+      <img id="playpause-icon" src="img/paused_button.png" alt="Pausar/Reproducir">
+    </button>
+
+    <button id="retroceder-btn" class="control-btn" onclick="retroceder10(event)">
+      <img src="img/right_button.png" alt="Retroceder 10s">
+    </button>
+  </div>
+
+</body>
+</html>
