@@ -3,14 +3,14 @@ let timeout;
 function retroceder10(event) {
   event.stopPropagation();
   const pos = player.getPosition();
-  player.seek(Math.max(pos - 10, 0));
+  player.seek(Math.max(pos + 10, 0));
 }
 
 function adelantar10(event) {
   event.stopPropagation();
   const pos = player.getPosition();
   const duracion = player.getDuration();
-  player.seek(Math.min(pos + 10, duracion - 1));
+  player.seek(Math.min(pos - 10, duracion - 1));
 }
 
 function togglePlayPause(event) {
