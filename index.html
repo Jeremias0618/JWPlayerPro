@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>JWPlayerPro</title>
-  <link rel="stylesheet" href="css/style.css"> <!-- Vinculamos el CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.png">
   <script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
-  <script src="js/jwplayer.js" defer></script> <!-- JavaScript principal -->
-  <script src="js/video-controls.js" defer></script> <!-- Controles del video -->
+  <script src="js/jwplayer.js" defer></script>
+  <script src="js/video-controls.js" defer></script>
 </head>
 <body>
 
-  <h1>JWPlayerPro</h1>
+  <a href="https://github.com/Jeremias0618/JWPlayerPro" target="_blank">
+    <img src="img/logo.png" alt="JWPlayerPro" id="logo" />
+  </a>
 
   <input type="text" id="url-input" placeholder="Ingresa la URL del video">
   <button id="load-btn" onclick="loadVideo()">Cargar Video</button>
