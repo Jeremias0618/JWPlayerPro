@@ -12,6 +12,25 @@ function loadVideo() {
   const isTwitch = /twitch\.tv/.test(videoUrl);
   const isMkv = videoUrl.toLowerCase().endsWith(".mkv");
 
+    if (isYouTube) {
+    const videoId = getYouTubeVideoId(videoUrl);
+    if (videoId) {
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      iframe.width = "100%";
+      iframe.height = "450";
+      iframe.frameBorder = "0";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+
+      miPlayerDiv.innerHTML = "";
+      miPlayerDiv.appendChild(iframe);
+    } else {
+      alert("No se pudo extraer el ID del video de YouTube.");
+    }
+    return;
+  }
+
   if (isMkv) {
     const video = document.createElement("video");
     video.src = videoUrl;
@@ -29,7 +48,6 @@ function loadVideo() {
     aspectratio: "16:9",
     controls: true,
     autostart: false,
-    ...(isYouTube && { type: "youtube" }),
     ...(isVimeo && { type: "vimeo" }),
     ...(isFacebook && { type: "mp4" }),
     ...(isTwitch && { type: "mp4" })
@@ -64,4 +82,10 @@ function loadVideo() {
 function moveButtonsToPlayer() {
   const container = player.getContainer();
   container.appendChild(buttonsOverlay);
+}
+
+function getYouTubeVideoId(url) {
+  const regex = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  const match = url.match(regex);
+  return match ? match[1] : null;
 }
